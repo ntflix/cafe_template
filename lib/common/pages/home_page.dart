@@ -12,9 +12,26 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
 
+  final _usernameBoxController = new TextEditingController();
+  final _passwordBoxController = new TextEditingController();
+  FocusNode focusNode;
+
+  void login(String username, String password) {
+    debugPrint("Username: " + username + ", password: " + password);
+    Navigator.of(context).pushNamed("/NavPage");
+  }
+
   void initState() {
     super.initState();
-    _saveCurrentRoute("/HomePage");
+    _saveCurrentRoute("/NavPage");
+
+    focusNode = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    focusNode.dispose();
+    super.dispose();
   }
 
   _saveCurrentRoute(String lastRoute) async {
@@ -25,103 +42,135 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return PlatformScaffold(
-      appBar: AppBar(
-        title: ListView(
-          children: <Widget> [
-            Container(
-              height : 45,
-              child : Image.asset(
-                Strings.logoDark,
-                fit: BoxFit.scaleDown,
-              ),
-            ),
-            Divider(),
-          ],
-        ),
-
-
-//        title: Text(
-//          Strings.name,
-//          style: TextStyle(color: Colors.black, fontSize: 20),
-//        ),
-        backgroundColor: Strings.colors.dark,
-//        backgroundColor: Strings.colors.mainColor,
-        centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.black),
-        elevation: Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 6.0,
-      ),
-//      drawer: BasicDrawer(),
       body: Container(
-        padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+        decoration: new BoxDecoration(
+          gradient: new LinearGradient(
+            colors: [
+              Colors.white,
+              Strings.colors.mainColor.withAlpha(100),
+            ],
+            stops: [0,1],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
 
         child: Column(
           children: <Widget>[
-
-            // stuff goes here like pictures and navigation
-
-            Container(    // I should maybe change these to Inkwells if I don't use images
+            Container(
               alignment: Alignment.center,
-              margin: const EdgeInsets.symmetric(horizontal : 20, vertical : 10),
+              height: 100,
+              margin: const EdgeInsets.symmetric(horizontal : 0, vertical : 0),
               padding: const EdgeInsets.all(0),
 
-              decoration: new BoxDecoration(
-                border: new Border.all(color: Strings.colors.dark),
-              ),
-
-              child: Text("nav item here", style: TextStyle(fontSize: 50),),
-//              child : Image.asset(
-//                Strings.logoDark,
-//                fit: BoxFit.scaleDown,
+//              decoration: new BoxDecoration(
+//                border: new Border.all(color: Strings.colors.dark),
 //              ),
+
+              child: Image.asset(
+                Strings.logo,
+                fit: BoxFit.fill,
+              ),
             ),
 
             Container(
+              margin: const EdgeInsets.fromLTRB(0, 120, 0, 0),
               alignment: Alignment.center,
-              margin: const EdgeInsets.symmetric(horizontal : 20, vertical : 10),
-              padding: const EdgeInsets.all(0),
+              height: 45,
+              width : 240,
 
               decoration: new BoxDecoration(
-                border: new Border.all(color: Strings.colors.dark),
+                border: new Border.all(color: Strings.colors.menuTextColor),
+                borderRadius: new BorderRadius.all(Radius.circular(9)),
               ),
 
-              child: Text("another item here", style: TextStyle(fontSize: 50),),
-//              child : Image.asset(
-//                Strings.logoDark,
-//                fit: BoxFit.scaleDown,
-//              ),
+              child: InkWell(
+                child: TextField(
+                  textAlign: TextAlign.center,
+                  controller: _usernameBoxController,
+
+                  decoration: new InputDecoration.collapsed(
+                    hintText: 'username',
+                    border: InputBorder.none,
+                  ),
+
+                  onSubmitted: (_) => FocusScope.of(context).requestFocus(focusNode),
+                ),
+              ),
             ),
 
             Container(
-              alignment: Alignment.center,
-              margin: const EdgeInsets.symmetric(horizontal : 20, vertical : 10),
-              padding: const EdgeInsets.all(0),
+              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: InkWell(
+                onTap: () => {},
+//                splashColor: Colors.transparent,
+                borderRadius: new BorderRadius.all(Radius.circular(9)),
+                //              customBorder: new Border.all(color: Strings.colors.menuTextColor),
 
-              decoration: new BoxDecoration(
-                border: new Border.all(color: Strings.colors.dark),
+                child : new Container(
+                  alignment: Alignment.center,
+                  height: 45,
+                  width : 240,
+
+                  decoration: new BoxDecoration(
+                    border: new Border.all(color: Strings.colors.menuTextColor),
+                    borderRadius: new BorderRadius.all(Radius.circular(9)),
+                  ),
+
+                  child: TextField(
+                    focusNode: focusNode,
+                    textAlign: TextAlign.center,
+                    obscureText: true,
+                    controller: _passwordBoxController,
+
+                    decoration: new InputDecoration.collapsed(
+                      hintText: 'password',
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
               ),
-
-              child: Text("and here", style: TextStyle(fontSize: 50),),
-//              child : Image.asset(
-//                Strings.logoDark,
-//                fit: BoxFit.scaleDown,
-//              ),
             ),
 
             Container(
-              alignment: Alignment.center,
-              margin: const EdgeInsets.symmetric(horizontal : 20, vertical : 10),
-              padding: const EdgeInsets.all(0),
+              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: InkWell(
+                onTap: () => { login(_usernameBoxController.text, _passwordBoxController.text) },
+//                splashColor: Colors.transparent,
+                borderRadius: new BorderRadius.all(Radius.circular(9)),
+  //              customBorder: new Border.all(color: Strings.colors.menuTextColor),
 
-              decoration: new BoxDecoration(
-                border: new Border.all(color: Strings.colors.dark),
+                child : new Container(
+                  alignment: Alignment.center,
+                  height: 40,
+                  width : 90,
+
+                  decoration: new BoxDecoration(
+                    border: new Border.all(color: Strings.colors.menuTextColor),
+                    borderRadius: new BorderRadius.all(Radius.circular(9)),
+                  ),
+
+                  child: Text("go", style: TextStyle(color: Strings.colors.menuTextColor),),
+                ),
               ),
-
-              child: Text("papapapapowww", style: TextStyle(fontSize: 50),),
-//              child : Image.asset(
-//                Strings.logoDark,
-//                fit: BoxFit.scaleDown,
-//              ),
             ),
+
+            Container(
+              padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
+              alignment: Alignment.center,
+
+              child: InkWell(
+                onTap: () => {},
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  child: Text("more options",
+                    style: TextStyle(color: Strings.colors.menuTextColor),
+                  ),
+                ),
+              ),
+            ),
+
           ],
         ),
       ),

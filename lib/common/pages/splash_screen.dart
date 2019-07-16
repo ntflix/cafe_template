@@ -19,7 +19,6 @@ class _SplashScreenState extends State<SplashScreen> {
     return Timer(Duration(seconds: splashDuration), () {
       SystemChannels.textInput.invokeMethod('TextInput.hide');
       Navigator.of(context).pushReplacementNamed('/HomePage');
-      print("yee yee");
     });
   }
 
@@ -44,10 +43,17 @@ class _SplashScreenState extends State<SplashScreen> {
                     margin: EdgeInsets.all(15),
                     alignment: FractionalOffset(0.5, 0.3),
 
-                    child : CachedNetworkImage(
-//                      placeholder: (context, url) => CircularProgressIndicator(),
-                      imageUrl: Strings.splashImageURL,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                      child: Image.asset(
+                        Strings.logo,
+                        fit: BoxFit.fill,
+                      ),
                     ),
+//                    child : CachedNetworkImage(
+////                      placeholder: (context, url) => CircularProgressIndicator(),
+//                      imageUrl: Strings.splashImageURL,
+//                    ),
                   ),
                 ),
                 Container(
