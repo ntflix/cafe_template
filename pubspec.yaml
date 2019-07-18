@@ -48,6 +48,11 @@ flutter:
 
   assets:
     - assets/
+    - assets/blurred/
+    - assets/atkinsons/
+    - assets/atkinsons/coffee/
+    - assets/atkinsons/tea/
+    - assets/atkinsons/items/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

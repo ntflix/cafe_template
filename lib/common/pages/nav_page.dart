@@ -9,8 +9,8 @@ class NavPage extends StatefulWidget {
 }
 
 class _NavPageState extends State<NavPage> {
-  @override
 
+  @override
   void initState() {
     super.initState();
     _saveCurrentRoute("/NavPage");
@@ -48,16 +48,17 @@ class _NavPageState extends State<NavPage> {
               width : MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 border: new Border(bottom: BorderSide(color: Strings.colors.separator)),
-                gradient: LinearGradient(
+                image: new DecorationImage(image: ExactAssetImage("assets/blurred/1.png"), fit: BoxFit.fitWidth),
+                /*gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
 
                   stops: [0, 1],
                   colors: [
-                    Colors.greenAccent[400],
+                    Colors.greenAccent[200],
                     Colors.greenAccent[100],
                   ],
-                ),
+                ),*/
               ),
 
               child: Container(
@@ -65,11 +66,7 @@ class _NavPageState extends State<NavPage> {
                 child: Text(
                   "OUR LOCATIONS",
                   textAlign: TextAlign.left,
-                  style: new TextStyle(
-                      fontFamily: "Avenir",
-                      color: Colors.white,
-                      fontSize: 38
-                  ),
+                  style: Strings.imageTextStyle,
                 ),
               ),
             ),
@@ -85,7 +82,8 @@ class _NavPageState extends State<NavPage> {
               width : MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 border: new Border(bottom: BorderSide(color: Strings.colors.separator)),
-                gradient: LinearGradient(
+                image: new DecorationImage(image: ExactAssetImage("assets/blurred/6.jpg"), fit: BoxFit.fitWidth),
+                /*gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
 
@@ -94,19 +92,15 @@ class _NavPageState extends State<NavPage> {
                     Colors.lightBlueAccent[100],
                     Colors.lightBlueAccent[400],
                   ],
-                ),
+                ),*/
               ),
 
               child: Container(
                 padding: const EdgeInsets.fromLTRB(0, 24, 10, 0), // (container-textSize) * 2 // (50-38)*2
                 child: Text(
-                  "MENU",
+                  "CATALOGUE",
                   textAlign: TextAlign.right,
-                  style: new TextStyle(
-                    fontFamily: "Avenir",
-                    color: Colors.white,
-                    fontSize: 38
-                  ),
+                  style: Strings.imageTextStyle,
                 ),
               ),
             ),
@@ -122,16 +116,17 @@ class _NavPageState extends State<NavPage> {
               width : MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 border: new Border(bottom: BorderSide(color: Strings.colors.separator)),
-                gradient: LinearGradient(
+                image: new DecorationImage(image: ExactAssetImage("assets/blurred/4.jpg"), fit: BoxFit.fitWidth),
+                /*gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
 
                   stops: [0, 1],
                   colors: [
-                    Colors.pink[400],
+                    Colors.pink[300],
                     Colors.pink[100],
                   ],
-                ),
+                ),*/
               ),
 
               child: Container(
@@ -139,11 +134,7 @@ class _NavPageState extends State<NavPage> {
                 child: Text(
                   "SPECIALS",
                   textAlign: TextAlign.left,
-                  style: new TextStyle(
-                      fontFamily: "Avenir",
-                      color: Colors.white,
-                      fontSize: 38
-                  ),
+                  style: Strings.imageTextStyle,
                 ),
               ),
             ),
