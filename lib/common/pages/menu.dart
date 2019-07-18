@@ -3,7 +3,7 @@ import 'package:cafe_template/common/platform/platform_scaffold.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:cafe_template/common/strings.dart';
 import 'package:cafe_template/common/widgets/item.dart';
-import 'package:cafe_template/common/widgets/future_item.dart';
+import 'package:cafe_template/common/widgets/page.dart';
 
 bool alreadyLoaded = false;
 
@@ -33,22 +33,19 @@ class _MenuState extends State<Menu> {
 
   @override
   Widget build(BuildContext context) {
-//    if (!alreadyLoaded) {
-//      getItems().then((val) {
-//        itemBoxes ??= getItemBoxes(val, 125);
-//        print(itemBoxes[0]);
-//      });
-//    }
 
     if (itemBoxes.length == 0) {
       getItems().then((val) {
         itemBoxes = getItemBoxes(val, 125);
-//        print(itemBoxes[0]);
-      setState(() {
-
-      });
+        setState((){/*updates view after data fetched*/});
       });
     }
+
+//    return Page(
+//      body: new Container(
+//        child : new ListView(children: itemBoxes),
+//      ),
+//    );
 
     return PlatformScaffold(
       backgroundColor: Colors.white,

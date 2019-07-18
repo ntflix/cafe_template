@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         "/HomePage": (BuildContext context) => HomePage(),
         "/NavPage": (BuildContext context) => NavPage(),
-        "/Locations" : (BuildContext context) => Menu(),
+        "/Locations" : (BuildContext context) => Locations(),
         "/Menu" : (BuildContext context) => Menu(),
         "/Specials" : (BuildContext context) => Specials()
       },

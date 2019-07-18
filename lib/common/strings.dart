@@ -44,4 +44,5 @@ class ThemeColors {
   Color dark = Color.fromRGBO(24, 26, 27, 1.0);
   Color menuTextColor = Color.fromRGBO(100, 100, 100, 1.0);
   Color separator = Colors.black;
+  Color iconColor = Colors.white;
 }
