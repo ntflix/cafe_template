@@ -11,6 +11,12 @@ class Strings {
 
   static ThemeColors colors = new ThemeColors();
 
+  static final itemTextStyle = new TextStyle(
+    fontFamily: "Helvetica Neue",
+    color: Color.fromRGBO(70, 70, 70, 1.0),
+    fontSize: 18,
+  );
+
   static final imageTextStyle = new TextStyle(
       fontFamily: "Avenir",
       color: Colors.white,

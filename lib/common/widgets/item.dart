@@ -77,12 +77,25 @@ class ItemBoxBuilder extends StatelessWidget {
         child : new InkWell(
           child:  Row(
             children: <Widget>[
+
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 7.5, vertical: 7.5),
                 child : Image.asset(
                   this.item.imagePath,
                   fit: BoxFit.contain,
                 ),
+              ),
+
+              Column(
+                children : <Widget> [
+                  Container(
+                  padding: const EdgeInsets.fromLTRB(0,12, 0, 0),
+                    child: Text(
+                      this.item.name.toUpperCase(),
+                      style: Strings.itemTextStyle,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

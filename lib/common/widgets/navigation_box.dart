@@ -51,7 +51,7 @@ class NavBoxBuilder extends StatelessWidget {
         ),
 
         child: Container(
-          padding: const EdgeInsets.fromLTRB(10, 24, 0, 0), // 100 : 24 | 80 : 14
+          padding: const EdgeInsets.fromLTRB(10, 24, 10, 0), // 100 : 24 | 80 : 14
           child: Text(
             this.navBoxItem.text,
             textAlign: this.navBoxItem.textAlign,
