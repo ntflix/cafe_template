@@ -44,7 +44,7 @@ class _NavPageState extends State<NavPage> {
               text: "OUR LOCATIONS",
               imagePath : "assets/blurred/1.png",
               navigatorPushName: "/Locations",
-              textAlign: TextAlign.left,
+              textAlign: Alignment.centerLeft,
             ),
           ),
 
@@ -53,7 +53,7 @@ class _NavPageState extends State<NavPage> {
               text: "CATALOGUE",
               imagePath : "assets/blurred/6.jpg",
               navigatorPushName: "/Menu",
-              textAlign: TextAlign.right,
+              textAlign: Alignment.centerRight,
             ),
           ),
 
@@ -62,7 +62,7 @@ class _NavPageState extends State<NavPage> {
               text: "SPECIALS",
               imagePath : "assets/blurred/4.jpg",
               navigatorPushName: "/Specials",
-              textAlign: TextAlign.left,
+              textAlign: Alignment.centerLeft,
             ),
           ),
 
