@@ -40,7 +40,7 @@ class _LocationsPageState extends State<LocationsPage> {
         ),
       ),
 
-      body: Column(
+      body: ListView(
         children: <Widget>[
 
           new NavBoxBuilder(
