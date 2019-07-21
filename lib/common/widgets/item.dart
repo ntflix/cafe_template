@@ -5,12 +5,14 @@ import 'dart:convert';
 import 'dart:async';
 
 class Item {
-  final String name, description, imagePath;
+  final String name, niceName, description, imagePath, components;
 
   Item({
     this.name,
+    this.niceName,
     this.description,
     this.imagePath,
+    this.components,
   });
 }
 
@@ -45,11 +47,13 @@ Future<List<Item>> getItems() async {
     } catch (_) {
       //no item here
       break;
-    }         // baπaπa
+    }
     Item thisItem = new Item(
-        name: thisItemMap['name'].toString(), // should probably convert name given in JSON (with '_'s) to user-friendly name
-        description: thisItemMap['description'].toString(),
-        imagePath: Strings.itemsImagesFolder + thisItemMap['name'].toString() + ".png"
+      components: thisItemMap['composition'].toString(),
+      niceName: thisItemMap['niceName'].toString(),
+      name: thisItemMap['name'].toString(), // should probably convert name given in JSON (with '_'s) to user-friendly name
+      description: thisItemMap['description'].toString(),
+      imagePath: Strings.itemsImagesFolder + thisItemMap['name'].toString() + ".png"
     );
 
     itemsList.add(thisItem);
@@ -87,13 +91,19 @@ class ItemBoxBuilder extends StatelessWidget {
               ),
 
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children : <Widget> [
                   Container(
-                  padding: const EdgeInsets.fromLTRB(0,12, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(0,12, 0, 0),
                     child: Text(
-                      this.item.name.toUpperCase(),
+                      this.item.niceName,
                       style: Strings.itemTextStyle,
                     ),
+                  ),
+
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+                    child: Text(this.item.components == null ? " " : this.item.components),
                   ),
                 ],
               ),

@@ -4,17 +4,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:cafe_template/common/strings.dart';
 import 'package:cafe_template/common/widgets/navigation_box.dart';
 
-class NavPage extends StatefulWidget {
+class LocationsPage extends StatefulWidget {
   @override
-  _NavPageState createState() => _NavPageState();
+  _LocationsPageState createState() => _LocationsPageState();
 }
 
-class _NavPageState extends State<NavPage> {
+class _LocationsPageState extends State<LocationsPage> {
 
   @override
   void initState() {
     super.initState();
-    _saveCurrentRoute("/NavPage");
+    _saveCurrentRoute("/Locations");
   }
 
   @override
@@ -34,16 +34,20 @@ class _NavPageState extends State<NavPage> {
         backgroundColor: Strings.colors.mainColor,
         title : Text(Strings.name),
 
-        leading : new Container(),
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back_ios, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
       ),
+
       body: Column(
         children: <Widget>[
 
           new NavBoxBuilder(
             navBoxItem: new NavBoxItem(
-              height: 100,
-              text: "OUR LOCATIONS",
-              imagePath : "assets/blurred/1.png",
+              height: 200,
+              text: "the hall café",
+              imagePath : "assets/blurred/2.jpg",
               navigatorPushName: "/Locations",
               textAlign: Alignment.centerLeft,
             ),
@@ -51,9 +55,9 @@ class _NavPageState extends State<NavPage> {
 
           new NavBoxBuilder(
             navBoxItem: new NavBoxItem(
-              height: 100,
-              text: "CATALOGUE",
-              imagePath : "assets/blurred/6.jpg",
+              height: 200,
+              text: "the music room",
+              imagePath : "assets/blurred/4.jpg", //TODO: Have images loaded dynamically from server
               navigatorPushName: "/Menu",
               textAlign: Alignment.centerRight,
             ),
@@ -61,9 +65,9 @@ class _NavPageState extends State<NavPage> {
 
           new NavBoxBuilder(
             navBoxItem: new NavBoxItem(
-              height: 100,
-              text: "SPECIALS",
-              imagePath : "assets/blurred/4.jpg",
+              height: 200,
+              text: "mackie mayor",
+              imagePath : "assets/blurred/3.jpg",
               navigatorPushName: "/Specials",
               textAlign: Alignment.centerLeft,
             ),

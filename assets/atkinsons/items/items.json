@@ -1,26 +1,30 @@
 {
   "0": {
     "name": "archetype",
+    "niceName" : "Archetype",
     "description": "Like all of our coffees, Archetype changes slightly with the seasons. Utilising coffees from north, south and pretty much bang on the equator with different harvest times, we aim for a seamless transition of fresh crops that will deliver a consistent brew year round. The flavour profile of this blend is all about big body, dark chocolate and caramel with a medium to low acidity. As an espresso it’s easy going and reliable, we like to pull shots of it short and strong to maximise that syrupy mouthfeel and bring out notes hazelnut, coco and molasses. In milk it’s super sweet like milk chocolate and butterscotch and although we usually use it in the espresso machine, a filter or french press will also deliver a satisfying and hefty brew",
     "price": 7.5,
-    "composition": "1/4 Colombia Racafe|1/4 Brazil Cerrado|1/4 Peru Sol y Cafe|1/4 Guatemala El Fogon"
+    "composition": "1/4 Colombia Racafe\n1/4 Brazil Cerrado\n1/4 Peru Sol y Cafe\n1/4 Guatemala El Fogon"
   },
   "1": {
     "name": "stereotype",
+    "niceName" : "Stereotype",
     "description": "Like all of our coffees, this blend is seasonal so the ingredients will change a little bit throughout the year to get the best from them. Throughout the Winter and Spring months the blend will include coffee from Fazenda Sao Francisco in the Mantiqueira de Minas mountains in Brazil and during Summer and Autumn it will use the Menendez brother’s coffee from Finca Las Delicias in the Apaneca Ilamatepec in El Salvador. Although these coffees are different, they both provide notes of chocolate and hazelnut with a low acidity and lots of sweetness. The other part of the blend uses coffee from one of the producers we work with in Risaralda, Colombia. The beauty of this part of the world is that due to it’s latitude and altitude they can harvest coffee twice a year with a Main Crop and a Metaca Crop which allows us to roast freshly harvested coffee from there all year round! This Colombian counterpart adds more sweetness to the blend and lifts the acidity a little bit with notes of orange and blackcurrant to make a balanced and well-rounded cuppa.",
     "price": 6.5,
-    "composition": "1/2 Colombia Racafe|1/2 Brazil São Francisco"
+    "composition": "1/2 Colombia Racafe\n1/2 Brazil São Francisco"
   },
   "2": {
     "name": "las_delicias",
+    "niceName" : "Las Delicias",
     "description" : "awesome",
     "price" : 7.5,
-    "composition" : "1/2 Unicorn Sprinkles|1/2 Fairy Dust"
+    "composition" : "1/2 Unicorn Sprinkles\n1/2 Fairy Dust"
   },
   "3": {
     "name": "murango",
+    "niceName" : "Murango",
     "description" : "Another pretty awesome one",
     "price" : 12.5,
-    "composition" : "1/2 Magic Sparkles|1/3 Fire|1/6 Banango"
+    "composition" : "1/2 Magic Sparkles\n1/3 Fire\n1/6 Banango"
   }
 }

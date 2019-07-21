@@ -55,7 +55,7 @@ class _MenuState extends State<Menu> {
         title : Text(Strings.name),
 
         leading: new IconButton(
-          icon: new Icon(Icons.arrow_back, color: Colors.white),
+          icon: new Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
