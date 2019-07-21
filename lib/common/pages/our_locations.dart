@@ -48,7 +48,6 @@ class _LocationsPageState extends State<LocationsPage> {
               height: 200,
               text: "the hall café",
               imagePath : "assets/blurred/2.jpg",
-              navigatorPushName: "/Locations",
               textAlign: Alignment.centerLeft,
             ),
           ),
@@ -58,7 +57,6 @@ class _LocationsPageState extends State<LocationsPage> {
               height: 200,
               text: "the music room",
               imagePath : "assets/blurred/4.jpg", //TODO: Have images loaded dynamically from server
-              navigatorPushName: "/Menu",
               textAlign: Alignment.centerRight,
             ),
           ),
@@ -68,7 +66,6 @@ class _LocationsPageState extends State<LocationsPage> {
               height: 200,
               text: "mackie mayor",
               imagePath : "assets/blurred/3.jpg",
-              navigatorPushName: "/Specials",
               textAlign: Alignment.centerLeft,
             ),
           ),
