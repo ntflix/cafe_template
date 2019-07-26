@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                 child: TextField(
                   textAlign: TextAlign.center,
                   controller: _usernameBoxController,
-
+                  autocorrect: false,
                   decoration: new InputDecoration.collapsed(
                     hintText: 'username',
                     border: InputBorder.none,
@@ -123,6 +123,7 @@ class _HomePageState extends State<HomePage> {
                     textAlign: TextAlign.center,
                     obscureText: true,
                     controller: _passwordBoxController,
+                    autocorrect: false,
 
                     decoration: new InputDecoration.collapsed(
                       hintText: 'password',

@@ -111,7 +111,9 @@ class ItemBoxBuilder extends StatelessWidget {
           ),
 
           borderRadius: new BorderRadius.all(Radius.circular(12)),
-          onTap: () {},
+          onTap: () {
+            
+          },
         ),
         color: Colors.transparent,
 //              borderRadius: new BorderRadius.all(Radius.circular(12)),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Strings {
   static const String splashImageURL = 'https://thecoffeehopper.com/favicons/android-chrome-512x512.png';
   static const String copyrightStatement = '© Copyright Statement 2019';
-  static const String name = "FLUTTER EXPERIMENTS";
+  static const String name = "ATKINSONS";
   static const String itemsJSON = "assets/atkinsons/items/items.json";
   static const String itemsImagesFolder = 'assets/atkinsons/coffee/';
   static const String logo = "assets/cafe_logo.png";
